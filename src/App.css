@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+.w-2 {
+    width: 2rem;
+}
+
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+.w-1-5 {
+    width: 1.5rem;
+}
+
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.background-image {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 18rem;
+}
+
+.overlay-primary {
+    background: #212529 0 0 no-repeat padding-box;
+    opacity: .65;
+}
+
+.z-index-2 {
+    z-index: 2;
+}

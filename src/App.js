@@ -9,7 +9,7 @@ import MatchScreen from "./pages/MatchScreen";
 function App() {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/match/:id" element={<MatchScreen />}></Route>

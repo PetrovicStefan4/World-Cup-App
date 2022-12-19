@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="bg-danger position-sticky top-0 start-0 end-0 z-index-10">
-      <nav className="container d-flex justify-content-between align-items-center py-3">
+      <nav className="container d-flex justify-content-between align-items-center py-2">
         <div className="nav-logo text-white">
           <Link to={"/"}>
             <a className="text-white">World Cup Qatar 2022</a>

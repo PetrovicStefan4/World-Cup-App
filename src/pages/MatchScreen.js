@@ -42,7 +42,9 @@ const MatchScreen = () => {
           <div className="col-12 col-lg-6 order-1 order-lg-2 bg-light text-primary py-4 px-5">
             <div className="row mb-3">
               <div className="col-12">
-                <h3 className="border-bottom border-danger">Statistics:</h3>
+                <h3 className="border-bottom border-danger text-uppercase">
+                  Statistics:
+                </h3>
               </div>
             </div>
             <div className="row mb-3">
@@ -55,7 +57,9 @@ const MatchScreen = () => {
             </div>
             <div className="row mb-3">
               <div className="col-12">
-                <h3 className="border-bottom border-danger">Details:</h3>
+                <h3 className="border-bottom border-danger text-uppercase">
+                  Details:
+                </h3>
               </div>
             </div>
             <div className="row mb-3">

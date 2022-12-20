@@ -17,7 +17,7 @@ const Hero = (props) => {
       className="background-cover background-image position-relative mb-5"
       style={{
         backgroundImage: `url(
-              "/images/stadions/${heroImage}"
+              "/images/stadiums/${heroImage}"
             )`,
       }}
     >

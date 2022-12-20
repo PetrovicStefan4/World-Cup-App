@@ -6,7 +6,7 @@ const MatchesPageHero = () => {
       className="background-cover background-image position-relative mb-5"
       style={{
         backgroundImage: `url(
-          "/images/stadions/Matches-Page-Hero.jpg"
+          "/images/hero-images/Matches-Page-Hero.jpg"
         )`,
       }}
     >

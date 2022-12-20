@@ -7,7 +7,7 @@ const HomeScreen = () => {
         className="background-cover background-image position-relative hero-heigh-100"
         style={{
           backgroundImage: `url(
-          "/images/stadions/Home-Page-Hero.webp"
+          "/images/hero-images/Home-Page-Hero.webp"
         )`,
         }}
       >

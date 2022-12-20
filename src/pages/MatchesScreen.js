@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ListItem from "../components/ListItem";
+import MatchesPageHero from "../components/pages/Matches/MatchesPageHero";
 
 const MatchesScreen = () => {
   const [data, setData] = useState();
@@ -11,6 +12,7 @@ const MatchesScreen = () => {
       setData(res.data);
     });
   }, []);
+
   const renderGroupStage = data?.map((item) => {
     if (item.stage_name === "First stage") {
       return <ListItem item={item} key={item.id} />;
@@ -48,36 +50,47 @@ const MatchesScreen = () => {
   });
 
   return (
-    <div className="container">
-      <div className="mb-5">
-        <h1 className="mb-4">Group Stage</h1>
-        {renderGroupStage}
+    <main>
+      <MatchesPageHero />
+      <div className="container mb-10">
+        <div className="mb-5">
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            Final
+          </h3>
+          {renderFinal}
+        </div>
+        <div className="mb-5">
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            For 3rd Place
+          </h3>
+          {renderRhirdPlace}
+        </div>
+        <div className="mb-5">
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            Semi Final
+          </h3>
+          {renderSemiFinal}
+        </div>
+        <div className="mb-5">
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            Quarter Final
+          </h3>
+          {renderQuarterFinal}
+        </div>
+        <div className="mb-5">
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            Round of 16
+          </h3>
+          {renderRoundOf16}
+        </div>
+        <div>
+          <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
+            Group Stage
+          </h3>
+          {renderGroupStage}
+        </div>
       </div>
-      <div className="mb-5">
-        <h1 className="mb-4">Round of 16</h1>
-        {renderRoundOf16}
-      </div>
-      <div className="mb-5">
-        <h1 className="mb-4">Quarter Final</h1>
-        {renderQuarterFinal}
-      </div>
-      <div className="mb-5">
-        <h1 className="mb-4">Semi Final</h1>
-        {renderSemiFinal}
-      </div>
-      <div className="mb-5">
-        <h1 className="mb-4">Semi Final</h1>
-        {renderSemiFinal}
-      </div>
-      <div className="mb-5">
-        <h1 className="mb-4">For Third Place</h1>
-        {renderRhirdPlace}
-      </div>
-      <div className="mb-5">
-        <h1 className="mb-4">Final</h1>
-        {renderFinal}
-      </div>
-    </div>
+    </main>
   );
 };
 

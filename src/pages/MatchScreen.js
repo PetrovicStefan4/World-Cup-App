@@ -20,17 +20,12 @@ const MatchScreen = () => {
     return <div>Loading...</div>;
   }
   const {
-    home_team,
-    away_team,
     home_team_lineup,
     away_team_lineup,
     home_team_events,
     away_team_events,
     home_team_statistics,
     away_team_statistics,
-    datetime,
-    venue,
-    location,
   } = data;
 
   console.log(data);

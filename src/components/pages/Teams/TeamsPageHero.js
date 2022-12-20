@@ -15,8 +15,8 @@ const TeamsPageHero = () => {
         <div className="h-100 container d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-white mb-5">Teams</h1>
           <h5 className="text-white">
-            This page show statistics for all teams, all statistics from group
-            stage and play offs are combined and showned in tables.
+            Statistics for all teams, all statistics from group stage and play
+            offs are combined and showned in tables.
           </h5>
         </div>
       </div>

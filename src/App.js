@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/match/:id" element={<MatchScreen />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }

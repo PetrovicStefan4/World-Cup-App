@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ListItem from "../components/ListItem";
 
-const HomeScreen = () => {
+const MatchesScreen = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -81,4 +81,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default MatchesScreen;

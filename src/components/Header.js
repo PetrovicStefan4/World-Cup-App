@@ -17,7 +17,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="me-3">
-            <Link to={"/"}>
+            <Link to={"/matches"}>
               <span className="nav-link text-white">Matches</span>
             </Link>
           </li>

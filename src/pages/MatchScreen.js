@@ -38,7 +38,7 @@ const MatchScreen = () => {
   return (
     <main className="bg-light">
       <Hero data={data} />
-      <div className="container">
+      <div className="container mb-10">
         <div className="row">
           <div className="col-6 col-lg-3 order-2 order-lg-1 bg-primary text-white py-4">
             <h2 className="mb-3 text-center">{home_team_lineup.tactics}</h2>

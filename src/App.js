@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeScreen from "./pages/HomeScreen";
 import MatchScreen from "./pages/MatchScreen";
+import TeamsScreen from "./pages/TeamsScreen";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/match/:id" element={<MatchScreen />}></Route>
+        <Route path="/teams" element={<TeamsScreen />}></Route>
       </Routes>
       <Footer />
     </Router>

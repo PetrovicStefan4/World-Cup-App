@@ -7,18 +7,23 @@ const Header = () => {
       <nav className="container d-flex justify-content-between align-items-center py-2">
         <div className="nav-logo text-white">
           <Link to={"/"}>
-            <a className="text-white">World Cup Qatar 2022</a>
+            <span className="text-white">World Cup Qatar 2022</span>
           </Link>
         </div>
         <ul className="d-flex justify-content-center align-items-center">
           <li className="me-3">
             <Link to={"/"}>
-              <a className="nav-link text-white">Home</a>
+              <span className="nav-link text-white">Home</span>
+            </Link>
+          </li>
+          <li className="me-3">
+            <Link to={"/"}>
+              <span className="nav-link text-white">Matches</span>
             </Link>
           </li>
           <li>
-            <Link to={"/"}>
-              <a className="nav-link text-white">Matches</a>
+            <Link to={"/teams"}>
+              <span className="nav-link text-white">Teams</span>
             </Link>
           </li>
         </ul>

@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="container d-flex justify-content-between align-items-center py-2">
         <div className="nav-logo text-white">
           <Link to={"/"}>
-            <span className="text-white">World Cup Qatar 2022</span>
+            <span className="text-white">Qatar 2022</span>
           </Link>
         </div>
         <ul className="d-flex justify-content-center align-items-center">

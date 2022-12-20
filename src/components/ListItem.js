@@ -10,7 +10,7 @@ const ListItem = ({ item }) => {
   const time = dayjs(datetime).format("HH:mm");
   const date = dayjs(datetime).format("DD.MMM");
   return (
-    <div className="bg-primary py-3 my-2">
+    <div className="match-list-item-link py-3 my-2">
       <Link to={`/match/${id}`}>
         <div className="row">
           <div className="col-1 text-center text-white">{time}</div>

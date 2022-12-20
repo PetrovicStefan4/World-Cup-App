@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HomeScreen from "./pages/HomeScreen";
 import MatchScreen from "./pages/MatchScreen";
 import TeamsScreen from "./pages/TeamsScreen";
+import TeamScreen from "./pages/TeamScreen";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/match/:id" element={<MatchScreen />}></Route>
         <Route path="/teams" element={<TeamsScreen />}></Route>
+        <Route path="/teams/:country" element={<TeamScreen />}></Route>
       </Routes>
       <Footer />
     </Router>

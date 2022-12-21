@@ -8,20 +8,27 @@ import MatchesScreen from "./pages/MatchesScreen";
 import MatchScreen from "./pages/MatchScreen";
 import TeamsScreen from "./pages/TeamsScreen";
 import TeamScreen from "./pages/TeamScreen";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query-devtools";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomeScreen />}></Route>
-        <Route path="/matches" element={<MatchesScreen />}></Route>
-        <Route path="/match/:id" element={<MatchScreen />}></Route>
-        <Route path="/teams" element={<TeamsScreen />}></Route>
-        <Route path="/teams/:country" element={<TeamScreen />}></Route>
-      </Routes>
-      <Footer />
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomeScreen />}></Route>
+          <Route path="/matches" element={<MatchesScreen />}></Route>
+          <Route path="/match/:id" element={<MatchScreen />}></Route>
+          <Route path="/teams" element={<TeamsScreen />}></Route>
+          <Route path="/teams/:country" element={<TeamScreen />}></Route>
+        </Routes>
+        <Footer />
+        {/* <ReactQueryDevtools initialIsOpen={true} position={"bottom-right"} /> */}
+      </Router>
+    </QueryClientProvider>
   );
 }
 

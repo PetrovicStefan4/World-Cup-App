@@ -1,49 +1,49 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import axios from "axios";
 import ListItem from "../components/ListItem";
 import MatchesPageHero from "../components/pages/Matches/MatchesPageHero";
+import { useQuery } from "react-query";
 
 const MatchesScreen = () => {
-  const [data, setData] = useState();
+  const { data: matches, isLoading } = useQuery("matches", () => {
+    return axios.get("https://worldcupjson.net/matches");
+  });
 
-  useEffect(() => {
-    axios.get("https://worldcupjson.net/matches").then((res) => {
-      setData(res.data);
-    });
-  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  const renderGroupStage = data?.map((item) => {
+  const renderGroupStage = matches?.data?.map((item) => {
     if (item.stage_name === "First stage") {
       return <ListItem item={item} key={item.id} />;
     }
   });
 
-  const renderRoundOf16 = data?.map((item) => {
+  const renderRoundOf16 = matches?.data?.map((item) => {
     if (item.stage_name === "Round of 16") {
       return <ListItem item={item} key={item.id} />;
     }
   });
 
-  const renderQuarterFinal = data?.map((item) => {
+  const renderQuarterFinal = matches?.data?.map((item) => {
     if (item.stage_name === "Quarter-final") {
       return <ListItem item={item} key={item.id} />;
     }
   });
 
-  const renderSemiFinal = data?.map((item) => {
+  const renderSemiFinal = matches?.data?.map((item) => {
     if (item.stage_name === "Semi-final") {
       return <ListItem item={item} key={item.id} />;
     }
   });
 
-  const renderRhirdPlace = data?.map((item) => {
+  const renderRhirdPlace = matches?.data?.map((item) => {
     if (item.stage_name === "Play-off for third place") {
       return <ListItem item={item} key={item.id} />;
     }
   });
 
-  const renderFinal = data?.map((item) => {
+  const renderFinal = matches?.data?.map((item) => {
     if (item.stage_name === "Final") {
       return <ListItem item={item} key={item.id} />;
     }
@@ -61,7 +61,7 @@ const MatchesScreen = () => {
         </div>
         <div className="mb-5">
           <h3 className="mb-3 py-2 border-bottom border-danger text-uppercase">
-            For 3rd Place
+            For Third Place
           </h3>
           {renderRhirdPlace}
         </div>

@@ -1,31 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import TeamPageHero from "../components/pages/Team/TeamPageHero";
 import TeamPageText from "../components/pages/Team/TeamPageText";
+import { useQuery } from "react-query";
 
 const TeamScreen = () => {
   const params = useParams();
-  const [data, setData] = useState();
+  const { data: team, isLoading } = useQuery("team", () => {
+    return axios.get(`https://worldcupjson.net/teams/${params?.country}`);
+  });
 
-  useEffect(() => {
-    axios
-      .get(`https://worldcupjson.net/teams/${params?.country}`)
-      .then((res) => {
-        setData(res.data);
-      });
-  }, [params.country]);
-
-  if (!data) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
       <main>
-        <TeamPageHero data={data} />
+        <TeamPageHero data={team?.data} />
         <div className="container">
-          <TeamPageText data={data} />
+          <TeamPageText data={team?.data} />
         </div>
       </main>
     </div>

@@ -5,20 +5,18 @@ import TeamEvents from "../components/pages/Match/TeamEvents";
 import Team from "../components/pages/Match/Team";
 import TeamsStatistics from "../components/pages/Match/TeamsStatistics";
 import Hero from "../components/pages/Match/Hero";
+import { useQuery } from "react-query";
 
 const MatchScreen = () => {
   const params = useParams();
-  const [data, setData] = useState();
+  const { data: match, isLoading } = useQuery("match", () => {
+    return axios.get(`https://worldcupjson.net/matches/${params?.id}`);
+  });
 
-  useEffect(() => {
-    axios.get(`https://worldcupjson.net/matches/${params?.id}`).then((res) => {
-      setData(res.data);
-    });
-  }, [params.id]);
-
-  if (!data) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
+
   const {
     home_team_lineup,
     away_team_lineup,
@@ -26,13 +24,11 @@ const MatchScreen = () => {
     away_team_events,
     home_team_statistics,
     away_team_statistics,
-  } = data;
-
-  console.log(data);
+  } = match?.data;
 
   return (
     <main className="bg-light">
-      <Hero data={data} />
+      <Hero data={match.data} />
       <div className="container mb-10">
         <div className="row">
           <div className="col-6 col-lg-3 order-2 order-lg-1 bg-primary text-white py-4">

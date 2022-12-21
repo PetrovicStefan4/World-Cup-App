@@ -10,8 +10,8 @@ const ListItem = ({ item }) => {
   const time = dayjs(datetime).format("HH:mm");
   const date = dayjs(datetime).format("DD.MMM");
   return (
-    <div className="match-list-item-link py-3 my-2">
-      <Link to={`/match/${id}`}>
+    <Link to={`/match/${id}`}>
+      <div className="match-list-item-link py-3 my-2">
         <div className="row">
           <div className="col-1 text-center text-white">{time}</div>
           <div className="col-1 text-white">{date}</div>
@@ -28,13 +28,17 @@ const ListItem = ({ item }) => {
           </div>
           <div className="col-3 text-white">
             <span
-              className={clsx(winner === home_team.name ? "text-danger" : null)}
+              className={clsx(
+                winner === home_team.name ? "fw-bold text-success" : null
+              )}
             >
               {home_team.name}
             </span>
             <span> - </span>
             <span
-              className={clsx(winner === away_team.name ? "text-danger" : null)}
+              className={clsx(
+                winner === away_team.name ? "fw-bold text-success" : null
+              )}
             >
               {away_team.name}
             </span>
@@ -42,8 +46,8 @@ const ListItem = ({ item }) => {
           <div className="col-3 text-white">{venue}</div>
           <div className="col-2 text-white">{location}</div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

@@ -6,7 +6,7 @@ const Team = (props) => {
   return (
     <>
       <div className="border-white border-bottom mb-3 ps-3">
-        <h4 className="text-danger mb-3 text-uppercase">Starting Eleven:</h4>
+        <h4 className="text-success mb-3 text-uppercase">Starting Eleven:</h4>
         {teamLineup?.starting_eleven?.map((item, index) => {
           const { name, shirt_number } = item;
           return (

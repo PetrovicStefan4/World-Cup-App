@@ -6,6 +6,7 @@ import Team from "../components/pages/Match/Team";
 import TeamsStatistics from "../components/pages/Match/TeamsStatistics";
 import Hero from "../components/pages/Match/Hero";
 import { useQuery } from "react-query";
+import Loading from "../components/Loading";
 
 const MatchScreen = () => {
   const params = useParams();
@@ -20,7 +21,7 @@ const MatchScreen = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {

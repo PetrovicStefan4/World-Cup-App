@@ -3,6 +3,7 @@ import axios from "axios";
 import ListItem from "../components/ListItem";
 import MatchesPageHero from "../components/pages/Matches/MatchesPageHero";
 import { useQuery } from "react-query";
+import Loading from "../components/Loading";
 
 const MatchesScreen = () => {
   const {
@@ -21,7 +22,7 @@ const MatchesScreen = () => {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {

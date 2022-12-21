@@ -4,6 +4,7 @@ import TeamsTables from "../components/pages/Teams/TeamsTables";
 import TableLegend from "../components/pages/Teams/TableLegend";
 import TeamsPageHero from "../components/pages/Teams/TeamsPageHero";
 import { useQuery } from "react-query";
+import Loading from "../components/Loading";
 
 const TeamsScreen = () => {
   const {
@@ -22,7 +23,7 @@ const TeamsScreen = () => {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {

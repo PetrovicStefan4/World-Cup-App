@@ -4,6 +4,7 @@ import axios from "axios";
 import TeamPageHero from "../components/pages/Team/TeamPageHero";
 import TeamPageText from "../components/pages/Team/TeamPageText";
 import { useQuery } from "react-query";
+import Loading from "../components/Loading";
 
 const TeamScreen = () => {
   const params = useParams();
@@ -17,7 +18,7 @@ const TeamScreen = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {

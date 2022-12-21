@@ -10,9 +10,15 @@ const MatchesScreen = () => {
     isLoading,
     isError,
     error,
-  } = useQuery("matches", () => {
-    return axios.get("https://worldcupjson.net/matches");
-  });
+  } = useQuery(
+    "matches",
+    () => {
+      return axios.get("https://worldcupjson.net/matches");
+    },
+    {
+      staleTime: 50000,
+    }
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;

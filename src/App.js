@@ -9,7 +9,7 @@ import MatchScreen from "./pages/MatchScreen";
 import TeamsScreen from "./pages/TeamsScreen";
 import TeamScreen from "./pages/TeamScreen";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query-devtools";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/teams/:country" element={<TeamScreen />}></Route>
         </Routes>
         <Footer />
-        {/* <ReactQueryDevtools initialIsOpen={true} position={"bottom-right"} /> */}
+        <ReactQueryDevtools initialIsOpen={true} position={"bottom-right"} />
       </Router>
     </QueryClientProvider>
   );

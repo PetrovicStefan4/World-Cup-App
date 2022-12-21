@@ -11,9 +11,15 @@ const TeamsScreen = () => {
     isLoading,
     error,
     isError,
-  } = useQuery("teams", () => {
-    return axios.get(`https://worldcupjson.net/teams`);
-  });
+  } = useQuery(
+    "teams",
+    () => {
+      return axios.get(`https://worldcupjson.net/teams`);
+    },
+    {
+      staleTime: 50000,
+    }
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;

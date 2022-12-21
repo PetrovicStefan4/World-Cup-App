@@ -6,12 +6,21 @@ import TeamsPageHero from "../components/pages/Teams/TeamsPageHero";
 import { useQuery } from "react-query";
 
 const TeamsScreen = () => {
-  const { data: teams, isLoading } = useQuery("teams", () => {
+  const {
+    data: teams,
+    isLoading,
+    error,
+    isError,
+  } = useQuery("teams", () => {
     return axios.get(`https://worldcupjson.net/teams`);
   });
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>;
   }
 
   return (

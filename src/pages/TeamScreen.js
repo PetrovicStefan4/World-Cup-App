@@ -7,12 +7,21 @@ import { useQuery } from "react-query";
 
 const TeamScreen = () => {
   const params = useParams();
-  const { data: team, isLoading } = useQuery("team", () => {
+  const {
+    data: team,
+    isLoading,
+    error,
+    isError,
+  } = useQuery("team", () => {
     return axios.get(`https://worldcupjson.net/teams/${params?.country}`);
   });
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>;
   }
 
   return (

@@ -5,12 +5,21 @@ import MatchesPageHero from "../components/pages/Matches/MatchesPageHero";
 import { useQuery } from "react-query";
 
 const MatchesScreen = () => {
-  const { data: matches, isLoading } = useQuery("matches", () => {
+  const {
+    data: matches,
+    isLoading,
+    isError,
+    error,
+  } = useQuery("matches", () => {
     return axios.get("https://worldcupjson.net/matches");
   });
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>;
   }
 
   const renderGroupStage = matches?.data?.map((item) => {

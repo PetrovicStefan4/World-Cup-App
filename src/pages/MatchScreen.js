@@ -9,12 +9,22 @@ import { useQuery } from "react-query";
 
 const MatchScreen = () => {
   const params = useParams();
-  const { data: match, isLoading } = useQuery("match", () => {
+
+  const {
+    data: match,
+    isLoading,
+    error,
+    isError,
+  } = useQuery("match", () => {
     return axios.get(`https://worldcupjson.net/matches/${params?.id}`);
   });
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>;
   }
 
   const {

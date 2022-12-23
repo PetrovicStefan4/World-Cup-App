@@ -1,18 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import TrophyIcon from "./Icons/TrophyIcon";
 
 const Header = () => {
   return (
-    <header className="position-sticky top-0 start-0 end-0 z-index-10">
-      <Navbar
-        bg="success"
-        variant="dark"
-        expand="lg"
-        collapseOnSelect
-        scrolling
-      >
+    <header className="position-sticky top-0 start-0 end-0 z-index-10 box-shadow">
+      <Navbar bg="success" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <Navbar.Brand href="/">
             <div className="d-flex justify-content-center align-items-center">
@@ -27,6 +20,9 @@ const Header = () => {
             <Nav className="ms-auto">
               <Nav.Link href="/">
                 <span className="fw-bold fs-18">Home</span>
+              </Nav.Link>
+              <Nav.Link href="/news">
+                <span className="fw-bold fs-18">News</span>
               </Nav.Link>
               <Nav.Link href="/matches">
                 <span className="fw-bold fs-18">Matches</span>

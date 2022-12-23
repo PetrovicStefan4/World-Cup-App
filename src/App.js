@@ -11,6 +11,7 @@ import TeamScreen from "./pages/TeamScreen";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import NewsListScreen from "./pages/NewsListScreen";
+import NewsScreen from "./pages/NewsScreen";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomeScreen />}></Route>
+          <Route path="/news/:id" element={<NewsScreen />}></Route>
           <Route path="/news" element={<NewsListScreen />}></Route>
           <Route path="/matches" element={<MatchesScreen />}></Route>
           <Route path="/match/:id" element={<MatchScreen />}></Route>

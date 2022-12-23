@@ -46,7 +46,7 @@ const MatchScreen = () => {
             <h2 className="mb-3 text-center">{home_team_lineup.tactics}</h2>
             <Team teamLineup={home_team_lineup} />
           </div>
-          <div className="col-12 col-lg-6 order-1 order-lg-2 bg-light text-primary py-4 px-5">
+          <div className="col-12 col-lg-6 order-1 order-lg-2 bg-light text-primary py-4 px-lg-5">
             <div className="row mb-3">
               <div className="col-12">
                 <h3 className="border-bottom border-danger text-uppercase">

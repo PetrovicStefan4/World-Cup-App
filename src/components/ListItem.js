@@ -13,20 +13,13 @@ const ListItem = ({ item }) => {
     <Link to={`/match/${id}`}>
       <div className="match-list-item-link py-3 my-2">
         <div className="row">
-          <div className="col-1 text-center text-white">{time}</div>
-          <div className="col-1 text-white">{date}</div>
-          <div className="col-2 text-center text-white">
-            {isPentalties && (
-              <span className="me-1">{"(" + home_team.penalties + ")"}</span>
-            )}
-            <span>{home_team.goals}</span>
-            <span> : </span>
-            <span>{away_team.goals}</span>
-            {isPentalties && (
-              <span className="ms-1">{"(" + away_team.penalties + ")"}</span>
-            )}
+          <div className="d-none d-lg-block col-lg-1 text-center text-white">
+            {time}
           </div>
-          <div className="col-3 text-white">
+          <div className="d-none d-lg-block col-lg-1 text-center text-white">
+            {date}
+          </div>
+          <div className="col-7 col-lg-3 text-white ps-4">
             <span
               className={clsx(
                 winner === home_team.name ? "fw-bold text-success" : null
@@ -43,8 +36,21 @@ const ListItem = ({ item }) => {
               {away_team.name}
             </span>
           </div>
-          <div className="col-3 text-white">{venue}</div>
-          <div className="col-2 text-white">{location}</div>
+          <div className="col-5 col-lg-2 text-center text-white">
+            {isPentalties && (
+              <span className="me-1">{"(" + home_team.penalties + ")"}</span>
+            )}
+            <span>{home_team.goals}</span>
+            <span> : </span>
+            <span>{away_team.goals}</span>
+            {isPentalties && (
+              <span className="ms-1">{"(" + away_team.penalties + ")"}</span>
+            )}
+          </div>
+          <div className="d-none d-lg-block col-lg-3 text-white">{venue}</div>
+          <div className="d-none d-lg-block col-lg-2 text-white">
+            {location}
+          </div>
         </div>
       </div>
     </Link>
